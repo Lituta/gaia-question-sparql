@@ -131,7 +131,7 @@ def get_configs():
 @app.route('/query_instance/<query_key>/<sample>', methods=['GET'])
 def get_query_list(query_key, sample):
     query_list = get_query_instance(query_key).query_list
-    if sample:
+    if sample == 'sample':
         sample_query_list = sample_queries(query_list)
         return json.dumps(sample_query_list, ensure_ascii=False)
     else:
